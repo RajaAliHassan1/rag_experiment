@@ -5,7 +5,6 @@ function chunkText(text, chunkSize) {
   for (let i = 0; i < words.length; i += chunkSize) {
     chunks.push(words.slice(i, i + chunkSize).join(" "));
   }
-
   return chunks;
 }
 

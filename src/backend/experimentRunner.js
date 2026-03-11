@@ -3,9 +3,9 @@ const chunkText = require("./chunker");
 
 async function runExperiment() {
 
-  const chunkSizes = [200, 500, 1000];
+  const chunkSizes = [20, 50, 100];
 
-  const text = await loadPDF("./src/data/documents/GUIDE ME Blind Assistance Report.pdf");
+  const text = await loadPDF("./src/data/documents/cancellationDoc.pdf");
 
   let results = [];
 
@@ -16,9 +16,13 @@ async function runExperiment() {
     console.log("Chunk size:", size);
     console.log("Chunks created:", chunks.length);
 
+    console.log("Conole cunks whole")
+    console.log(chunks)
+
     results.push({
       chunkSize: size,
-      chunksCreated: chunks.length
+      chunksCreated: chunks.length,
+      chunksText : chunks,
     });
 
   }
